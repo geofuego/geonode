@@ -138,7 +138,7 @@ if "django_select2" in settings.INSTALLED_APPS:
 
 urlpatterns += i18n_patterns(
     url(r"^grappelli/", include("grappelli.urls")),
-    url(r"^admin/", admin.site.urls, name="admin"),
+    url(r"^gestion/", admin.site.urls, name="admin"),
 )
 
 # Internationalization Javascript
