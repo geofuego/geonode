@@ -35,7 +35,7 @@
     "list.js": "^1.5.0",
     "load-grunt-tasks": "^5.1.0",
     "mime": "^2.4.4",
-    "moment": "^2.24.0",
+    "moment": "^2.30.1",
     "moment-timezone": "^0.5.26",
     "node-sass": "^4.9.0",
     "openlayers": "^4.6.5",

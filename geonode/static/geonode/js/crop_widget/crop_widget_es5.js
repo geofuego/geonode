@@ -1,11 +1,11 @@
 "use strict";
 
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 var IDS_VALUT = {
   SEND_B_ID: 'id_crop_save_button',
   CANCEL_B_ID: 'id_crop_cancel_button',
@@ -18,16 +18,13 @@ var IDS_VALUT = {
   MODAL_OVERLAY_ID: 'id_crop-modal-overlay',
   FILE_LABEL_ID: 'id_crop-file-label'
 };
-
 var ThumbnailService = /*#__PURE__*/function () {
   function ThumbnailService(document_id, get_path) {
     _classCallCheck(this, ThumbnailService);
-
     this.document_id = document_id;
     this.get_path = get_path;
   }
-
-  _createClass(ThumbnailService, [{
+  return _createClass(ThumbnailService, [{
     key: "postThumbnail",
     value: function postThumbnail(base64_url) {
       var formData = new FormData();
@@ -55,7 +52,6 @@ var ThumbnailService = /*#__PURE__*/function () {
     value: function _getCookie(name) {
       var value = "; " + document.cookie;
       var parts = value.split("; " + name + "=");
-
       if (parts.length === 2) {
         return parts.pop().split(";").shift();
       }
@@ -79,7 +75,6 @@ var ThumbnailService = /*#__PURE__*/function () {
           } else {
             image_element.src = '/static/geonode/img/missing_thumb.png';
           }
-
           if (callback !== null) {
             callback();
           }
@@ -97,34 +92,26 @@ var ThumbnailService = /*#__PURE__*/function () {
       b64Data = b64Data.split(',')[1];
       var byteCharacters = atob(b64Data);
       var byteArrays = [];
-
       for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
         var slice = byteCharacters.slice(offset, offset + sliceSize);
         var byteNumbers = new Array(slice.length);
-
         for (var i = 0; i < slice.length; i++) {
           byteNumbers[i] = slice.charCodeAt(i);
         }
-
         var byteArray = new Uint8Array(byteNumbers);
         byteArrays.push(byteArray);
       }
-
       return new Blob(byteArrays, {
         type: contentType
       });
     }
   }]);
-
-  return ThumbnailService;
 }();
-
 var CssManager = /*#__PURE__*/function () {
   function CssManager() {
     _classCallCheck(this, CssManager);
   }
-
-  _createClass(CssManager, [{
+  return _createClass(CssManager, [{
     key: "makeVisible",
     value: function makeVisible(dom_elem_id) {
       $('#' + dom_elem_id).removeClass('invisible');
@@ -146,15 +133,12 @@ var CssManager = /*#__PURE__*/function () {
       }
     }
   }]);
-
-  return CssManager;
 }();
-
 var DomBuilder = /*#__PURE__*/function () {
   // class too manage building required dom to display cropper
+
   function DomBuilder(widget_grain) {
     _classCallCheck(this, DomBuilder);
-
     this.widget_grain = widget_grain;
     $(this.widget_grain).wrap(function () {
       return "<div id=".concat(IDS_VALUT.GRAIN_WRAP_ID, " class=crop-widget></div>");
@@ -166,8 +150,7 @@ var DomBuilder = /*#__PURE__*/function () {
     this.grain_wrapper.append("<div id=".concat(IDS_VALUT.MODAL_OVERLAY_ID, " class=\"crop-modal-overlay invisible\"></div>"));
     this.grain_wrapper.prepend("<div class=\"thumbnail-title\">Thumbnail</div>");
   }
-
-  _createClass(DomBuilder, [{
+  return _createClass(DomBuilder, [{
     key: "_create_flow_buttons",
     value: function _create_flow_buttons() {
       this.grain_wrapper.append("<input type=file id=".concat(IDS_VALUT.FILE_INPUT_ID, " name=files class=crop-input /> "));
@@ -179,25 +162,19 @@ var DomBuilder = /*#__PURE__*/function () {
     value: function create_workspace() {
       var workspace_html = "\n                              <div id=".concat(IDS_VALUT.WORKSPACE_CONTAINER_ID, " class=\"crop-modal-container invisible\">                                  \n                                  <img id=").concat(IDS_VALUT.WORKSPACE_ID, " class=\"crop-modal-workspace\">                                      \n                                  <button type=button id=").concat(IDS_VALUT.OK_B_ID, " class=\"btn btn-default\">OK</button><button type=button id=").concat(IDS_VALUT.DISMISS_B_ID, " class=\"btn btn-default\">Dismiss</button>                                      \n                              </div>");
       $(document.body).append(workspace_html);
-
       this._create_flow_buttons();
     }
   }]);
-
-  return DomBuilder;
 }();
-
 var CropTask = /*#__PURE__*/function () {
   function CropTask(dom_builder, css_manager, data_service) {
     _classCallCheck(this, CropTask);
-
     this.dom_builder = dom_builder;
     this.css_manager = css_manager;
     this.previous_image = null;
     this.data_service = data_service;
   }
-
-  _createClass(CropTask, [{
+  return _createClass(CropTask, [{
     key: "init_cropper",
     value: function init_cropper() {
       this.cropper = new Cropper($('#' + IDS_VALUT.WORKSPACE_ID)[0], {
@@ -225,26 +202,20 @@ var CropTask = /*#__PURE__*/function () {
     key: "load_start_image",
     value: function load_start_image(file_event) {
       var _this = this;
-
       if (window.File && window.FileReader && window.FileList && window.Blob) {
         if (file_event.target.files.length) {
           var file = file_event.target.files[0];
           var fr = new FileReader();
-
           fr.onload = function (e) {
             if (_this.cropper) {
               _this.cropper.destroy();
             }
-
             $('#' + IDS_VALUT.WORKSPACE_ID).attr('src', e.target.result);
           };
-
           fr.onloadend = function (e) {
             _this.init_cropper();
-
             _this.css_manager.change_modal_visibility();
           };
-
           fr.readAsDataURL(file);
         }
       } else {
@@ -260,7 +231,6 @@ var CropTask = /*#__PURE__*/function () {
     key: "dismiss_current_image",
     value: function dismiss_current_image() {
       this._clear_input();
-
       this.cropper.destroy();
       this.css_manager.change_modal_visibility();
     }
@@ -279,18 +249,14 @@ var CropTask = /*#__PURE__*/function () {
       this.css_manager.makeVisible(IDS_VALUT.SEND_B_ID);
       this.css_manager.makeVisible(IDS_VALUT.CANCEL_B_ID);
       this.cropper.destroy();
-
       this._clear_input();
-
       this.css_manager.change_modal_visibility();
     }
   }, {
     key: "cancel_cropping",
     value: function cancel_cropping() {
       $(this.dom_builder.widget_grain).attr('src', this.previous_image);
-
       this._clear_input();
-
       this.css_manager.makeImvisible(IDS_VALUT.CANCEL_B_ID);
       this.css_manager.makeImvisible(IDS_VALUT.SEND_B_ID);
       this.css_manager.makeVisible(IDS_VALUT.FILE_INPUT_ID);
@@ -306,10 +272,7 @@ var CropTask = /*#__PURE__*/function () {
       this.css_manager.makeImvisible(IDS_VALUT.CANCEL_B_ID);
     }
   }]);
-
-  return CropTask;
 }();
-
 var CropWidget = /*#__PURE__*/function () {
   /**
    *
@@ -321,27 +284,21 @@ var CropWidget = /*#__PURE__*/function () {
    */
   function CropWidget(element, document_id, get_path) {
     var prefetch_image = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
-
     _classCallCheck(this, CropWidget);
-
     this.element = element;
-
     if (this.element.tagName !== 'IMG') {
       throw Error('Base element should be <img>');
     }
-
     this.dom_builder = new DomBuilder(this.element);
     this.css_manager = new CssManager();
     this.service = new ThumbnailService(document_id, get_path);
     this.crop = null;
     this.prefetch_image = prefetch_image;
   }
-
-  _createClass(CropWidget, [{
+  return _createClass(CropWidget, [{
     key: "init",
     value: function init() {
       this.crop = new CropTask(this.dom_builder, this.css_manager, this.service);
-
       if (this.prefetch_image === '') {
         this.element.src = '/static/geonode/img/missing_thumb.png';
         this.crop.init();
@@ -353,7 +310,5 @@ var CropWidget = /*#__PURE__*/function () {
       }
     }
   }]);
-
-  return CropWidget;
 }();
 //# sourceMappingURL=crop_widget_es5.js.map
