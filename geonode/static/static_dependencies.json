@@ -48,7 +48,6 @@
     "angular/angular.min.js",
     "angular-cookies/angular-cookies.js",
     "angular-sanitize/angular-sanitize.min.js",
-    "angular-openlayers-directive/dist/angular-openlayers-directive.min.js",
 
     "eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js",
     "bootstrap-tokenfield/dist/bootstrap-tokenfield.js",
