@@ -1,39 +1,38 @@
 {% verbatim %}
-<div class="row">
-    <article ng-repeat="group_profile in results" resource_id="{{ id }}" ng-cloak class="ng-cloak">
-        <div class="col-xs-12 item-container">
-            <div class="col-xs-4">
-                <img class="img-responsive" ng-src="{{ group_profile.logo_url }}" alt="{{ group_profile.title }}">
-            </div>
-            <div class="col-xs-8 item-details">
-                <h4><a href="{{ group_profile.detail_url }}">{{ group_profile.title }}</a></h4>
-                <p class="abstract">
-                    {{ group_profile.description | limitTo: 300 }}
-                    {{ group_profile.description.length > 300 ? '...' : ''}}
-                </p>
-                <div class="row">
-                    <div class="col-xs-12 item-items">
-                        <ul class="list-inline">
-                            <li>
-                                <a href="{{ group_profile.detail_url }}">
-                                    <strong>{{ group_profile.member_count }}</strong>
-                                    <ng-pluralize count="group_profile.member_count"
-                                                  when="{'1': 'Member', 'other': 'Members'}"></ng-pluralize>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ group_profile.detail_url }}">
-                                    <strong>{{ group_profile.manager_count }}</strong>
-                                    <ng-pluralize count="group_profile.manager_count"
-                                                  when="{'1': 'Manager', 'other': 'Managers'}"></ng-pluralize>
-                                </a>
-                            </li>
-                            <li>{{ created|date:"d.M.y" }}</li>
-                        </ul>
+<template id="_group_snippet">
+    <div class="row">
+        <article resource_id="${object.id}">
+            <div class="col-xs-12 item-container">
+                <div class="col-xs-4">
+                    <img class="img-responsive" src="${ object.logo_url }" alt="${ object.title }">
+                </div>
+                <div class="col-xs-8 item-details">
+                    <h4><a href="${ object.detail_url }">${ object.title }</a></h4>
+                    <p class="abstract">
+                        ${ object.description }                        
+                    </p>
+                    <div class="row">
+                        <div class="col-xs-12 item-items">
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="${ object.detail_url }">
+                                        <strong>${ object.member_count }</strong>
+                                        ${ object.member_count == '1' ? 'Member': 'Members'}                                       
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="${ object.detail_url }">
+                                        <strong>${ object.manager_count }</strong>
+                                        ${ object.manager_count == '1' ? 'Manager': 'Managers'}
+                                    </a>
+                                </li>                                
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </article>
-</div>
+        </article>
+    </div>
+</template>
+
 {% endverbatim %}

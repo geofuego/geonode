@@ -10,13 +10,24 @@
 <div class="row">
     <nav>
         <ul class="pagination pull-right">
-            <li ng-click="sync_pagination_scroll(false)"><a href><strong><i
-                    class="fa fa-angle-left"></i></strong></a></li>
-            <li><a href>{% trans "page" %} <span ng-model="page" ng-bind="page"></span> {% trans "of" %} <span
-                    ng-bind="numpages"></span></a>
+            <li>
+                <a href>
+                    <strong><i class="fa fa-angle-left"></i></strong>
+                </a>
             </li>
-            <li ng-click=sync_pagination_scroll(true)><a href><strong><i
-                    class="fa fa-angle-right"></i></strong></a></li>
+            <li>
+                <a href onclick="paginate_down()">
+                    {% trans "page" %} 
+                    <span id="current-page"></span> 
+                    {% trans "of" %} 
+                    <span id="numpages"></span>
+                </a>
+            </li>
+            <li>
+                <a href onclick="paginate_up()">
+                    <strong><i class="fa fa-angle-right"></i></strong>
+                </a>
+            </li>
         </ul>
     </nav>
 </div>

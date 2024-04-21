@@ -23,7 +23,6 @@
   "other_dependencies": [
     "jquery/dist/jquery.js",
     "jquery-ui-dist/jquery-ui.js",
-    "angular/angular.js",
     "bootstrap-select/dist/js/bootstrap-select.js",
     "bootstrap-table/dist/bootstrap-table.js",
     "bootstrap-toggle/js/bootstrap-toggle.js",
@@ -43,11 +42,7 @@
     "moment-timezone/builds/moment-timezone-with-data.js",
 
     "bootstrap/dist/js/bootstrap.min.js",
-    "patternfly-bootstrap-treeview/dist/bootstrap-treeview.js",
-
-    "angular/angular.min.js",
-    "angular-cookies/angular-cookies.js",
-    "angular-sanitize/angular-sanitize.min.js",
+    "patternfly-bootstrap-treeview/dist/bootstrap-treeview.js",  
 
     "eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js",
     "bootstrap-tokenfield/dist/bootstrap-tokenfield.js",
