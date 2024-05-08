@@ -167,20 +167,14 @@ msgstr "Resumen"
 msgid "Purpose"
 msgstr "Propósito"
 
-#, fuzzy
-#| msgid "Other Settings"
 msgid "Other constraints"
-msgstr "Otros ajustes"
+msgstr "Otras restricciones"
 
-#, fuzzy
-#| msgid "supplemental information"
 msgid "Supplemental information"
 msgstr "información adicional"
 
-#, fuzzy
-#| msgid "data quality statement"
 msgid "Data quality statement"
-msgstr "declaración de calidad de datos"
+msgstr "Declaración de calidad de datos"
 
 msgid "Owner"
 msgstr "Dueño"
@@ -376,10 +370,8 @@ msgstr "tipo de fecha"
 msgid "edition"
 msgstr "edición"
 
-#, fuzzy
-#| msgid "Attribute"
 msgid "Attribution"
-msgstr "Atributo"
+msgstr "Atribución"
 
 msgid "DOI"
 msgstr "DOI"
@@ -479,7 +471,7 @@ msgid "Resource Type"
 msgstr "Base de recursos"
 
 msgid "Metadata"
-msgstr "Metadata"
+msgstr "Metadatos"
 
 msgid "If true, will be excluded from search"
 msgstr ""
@@ -511,20 +503,14 @@ msgstr "SRID"
 msgid "For more info see"
 msgstr "Para más información ver"
 
-#, fuzzy
-#| msgid "Creating a Map"
 msgid "Creation Date"
-msgstr "Creando un Mapa"
+msgstr "Fecha de creación"
 
-#, fuzzy
-#| msgid "Position Name"
 msgid "Publication Date"
-msgstr "Nombre de la posición"
+msgstr "Fecha de publicación"
 
-#, fuzzy
-#| msgid "Permission Denied"
 msgid "Revision Date"
-msgstr "Permiso Denegado"
+msgstr "Fecha de revision"
 
 msgid "Type"
 msgstr "Tipo"
@@ -1321,15 +1307,11 @@ msgstr "Usted no tiene permitido modificar los metadatos de este documento"
 msgid "You are not permitted to view this document"
 msgstr "Usted no tiene permitido ver este documento"
 
-#, fuzzy
-#| msgid "Not provided"
 msgid "Not allowed"
-msgstr "No suministrado"
+msgstr "No permitido"
 
-#, fuzzy
-#| msgid "Maps found"
 msgid "Not found"
-msgstr "Mapas encontrados"
+msgstr "No encontrado"
 
 msgid "You must set a point of contact for this resource"
 msgstr "Debe insertar una persona como punto de contacto para este recurso"
@@ -1343,10 +1325,8 @@ msgstr "Favorito"
 msgid "Add to Favorites"
 msgstr "Add to Favorites"
 
-#, fuzzy
-#| msgid "Add to Favorites"
 msgid "Go to Favorites"
-msgstr "Add to Favorites"
+msgstr "Ir a Favoritos"
 
 msgid "Log in to add/delete Favorites."
 msgstr "Inicie sesión para añadir/eliminar favoritos."
@@ -1363,75 +1343,47 @@ msgstr "Favoritos por"
 msgid "Item"
 msgstr ""
 
-#, fuzzy
-#| msgid "Map Created"
 msgid "App Created"
-msgstr "Mapa Creado"
+msgstr "App Creada"
 
-#, fuzzy
-#| msgid "A Map was created"
 msgid "A App was created"
-msgstr "Se creó un Mapa"
+msgstr "Se creó una App"
 
-#, fuzzy
-#| msgid "Map Updated"
 msgid "App Updated"
-msgstr "Mapa actualizado"
+msgstr "App actualizada"
 
-#, fuzzy
-#| msgid "A Map was updated"
 msgid "A App was updated"
-msgstr "Se actualizó un Mapa"
+msgstr "Se actualizó una App"
 
-#, fuzzy
-#| msgid "Map Approved"
 msgid "App Approved"
-msgstr "Mapa Aprobado"
+msgstr "App Aprobada"
 
-#, fuzzy
-#| msgid "A Map was approved by a Manager"
 msgid "A App was approved by a Manager"
-msgstr "Un mapa fue aprobado por un Administrador"
+msgstr "Una app fue aprobada por un Administrador"
 
-#, fuzzy
-#| msgid "Map Published"
 msgid "App Published"
-msgstr "Mapa Publicado"
+msgstr "App Publicada"
 
-#, fuzzy
-#| msgid "A Map was published"
 msgid "A App was published"
-msgstr "Se publicó un Mapa"
+msgstr "Se publicó una App"
 
-#, fuzzy
-#| msgid "Map Deleted"
 msgid "App Deleted"
-msgstr "Mapa borrado"
+msgstr "App borrada"
 
-#, fuzzy
-#| msgid "A Map was deleted"
 msgid "A App was deleted"
-msgstr "Se eliminó un Mapa"
+msgstr "Se eliminó una App"
 
-#, fuzzy
-#| msgid "Comment on Map"
 msgid "Comment on App"
-msgstr "Comentar sobre Mapa"
+msgstr "Comentar sobre App"
 
-#, fuzzy
-#| msgid "A map was commented on"
 msgid "An App was commented on"
-msgstr "Se comentó un Mapa"
+msgstr "Se comentó sobre una App"
 
-#, fuzzy
-#| msgid "Rating for Map"
 msgid "Rating for App"
-msgstr "Calificación por Mapa"
+msgstr "Calificación por App"
 
-#, fuzzy
-#| msgid "A rating was given to a map"
 msgid "A rating was given to an App"
-msgstr "Se calificó un Mapa"
+msgstr "Se calificó una App"
 
 msgid "Name"
 msgstr "Nombre"
@@ -2513,10 +2465,8 @@ msgstr ""
 msgid "Edit data"
 msgstr "Editar datos"
 
-#, fuzzy
-#| msgid "View Metadata"
 msgid "View Dataset"
-msgstr "Ver Metadatos"
+msgstr "Ver Dataset"
 
 msgid "Attribute Information"
 msgstr "Información de atributo"
@@ -6292,10 +6242,10 @@ msgid "Online Link"
 msgstr "Linl en línea"
 
 msgid "* Field declared Mandatory by the Metadata Schema"
-msgstr ""
+msgstr "* Campo declarado Obligatorio por el Esquema de Metadatos"
 
 msgid "Please, fill the following items before clicking on preview:"
-msgstr ""
+msgstr "Por favor, complete los siguientes elementos antes de hacer clic en la vista previa:"
 
 msgid "Request perission"
 msgstr "Solicitar permiso"

@@ -187,7 +187,7 @@ USE_L10N = ast.literal_eval(os.getenv("USE_I18N", "True"))
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = os.getenv("LANGUAGE_CODE", "en")
+LANGUAGE_CODE = os.getenv("LANGUAGE_CODE", "es")
 
 _DEFAULT_LANGUAGES = """(
     ('af', 'Afrikaans'),
@@ -1487,15 +1487,40 @@ if GEONODE_CLIENT_LAYER_PREVIEW_LIBRARY == "mapstore":
         MAPSTORE_CATALOGUE_SELECTED_SERVICE = list(list(GEONODE_CATALOGUE_SERVICE.keys()))[0]
 
     DEFAULT_MS2_BACKGROUNDS = [
-        {
-            "type": "osm",
-            "title": "Open Street Map",
-            "name": "mapnik",
-            "source": "osm",
+    {
+            "type": "wms",
+            "title": "Argenmap",
+            "format": "image/png",
+            "id": "capabaseargenmap",
+            "name": "capabaseargenmap",
+            "url": "https://wms.ign.gob.ar/geoserver/wms",
             "group": "background",
+            "thumbURL": "https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/0/0/0.png",
             "visibility": True,
-        },
-        {
+    }, 
+    {
+            "type": "wms",
+            "title": "Argenmap gris",
+            "format": "image/png",
+            "id": "mapabase_gris",
+            "name": "mapabase_gris",
+            "url": "https://wms.ign.gob.ar/geoserver/wms",
+            "group": "background",
+            "thumbURL": "https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/mapabase_gris@EPSG%3A3857@png/0/0/0.png",
+            "visibility": False,
+    }, 
+    {
+            "type": "wms",
+            "title": "Argenmap oscuro",
+            "format": "image/png",
+            "id": "argenmap_oscuro",
+            "name": "argenmap_oscuro",
+            "url": "https://wms.ign.gob.ar/geoserver/wms",
+            "group": "background",
+            "thumbURL": "https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/argenmap_oscuro@EPSG%3A3857@png/0/0/0.png",
+            "visibility": False,
+    }, 
+    {
             "type": "tileprovider",
             "title": "OpenTopoMap",
             "provider": "OpenTopoMap",
@@ -1503,28 +1528,38 @@ if GEONODE_CLIENT_LAYER_PREVIEW_LIBRARY == "mapstore":
             "source": "OpenTopoMap",
             "group": "background",
             "visibility": False,
-        },
-        {
+    }, 
+    {
+            "type": "tileprovider",
+            "title": "Imágenes satelitales Esri",
+            "provider": "Esri.WorldImagery",
+            "name": "Esri.WorldImagery",
+            "source": "Esri.WorldImagery",
+            "group": "background",
+            "thumbURL": "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/0/0/0",
+            "visibility": False,
+    },
+    {
             "type": "wms",
             "title": "Sentinel-2 cloudless - https://s2maps.eu",
             "format": "image/jpeg",
             "id": "s2cloudless",
             "name": "s2cloudless:s2cloudless",
-            "url": "https://maps.geosolutionsgroup.com/geoserver/wms",
+            "url": "https://maps.geo-solutions.it/geoserver/wms",
             "group": "background",
             "thumbURL": f"{SITEURL}static/mapstorestyle/img/s2cloudless-s2cloudless.png",
             "visibility": False,
-        },
-        {
+    },
+    {
             "source": "ol",
             "group": "background",
             "id": "none",
             "name": "empty",
-            "title": "Empty Background",
+            "title": "Fondo vacío",
             "type": "empty",
             "visibility": False,
             "args": ["Empty Background", {"visibility": False}],
-        },
+    },
     ]
 
     if MAPBOX_ACCESS_TOKEN:
